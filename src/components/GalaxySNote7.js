@@ -19,9 +19,15 @@ export default class GalaxySNote7 extends React.Component {
   }
 
   throwAFit = () => {
+    this.setState({panicked: true})
+    //count to 2
+    setInterval(this.relax, 2000)
+    //alarm the piggos
+    this.props.alterEnvironment("inhospitable")
   }
 
   relax = () => {
+    this.setState({panicked: false})
   }
 
   exclaim = () => {
